@@ -1,0 +1,84 @@
+<html>
+<?php
+require_once('connectdb.php');
+session_start();
+
+?>
+<head><title>Login to Access</title>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<h1> Update Product Info </h1>
+
+
+    <div class="container">
+
+
+  <form class="form-horizontal" action="updateProductProcess.php" method="post">
+     <div class="col-md-6 col-sm-6 col-xs-12">
+
+       <div class="form-group">
+          <label for="inputname">Product Name:</label>
+             <input type="text" class="form-control" placeholder="Enter product name/title" name="title" required> 
+       </div>
+       <div class="form-group">
+             <input type="text" class="form-control" placeholder="Product Model ex. G-2PW2100" name="model" required>
+       </div>
+       <div class="form-group">
+          <label for="sel1">Select Brand:</label>
+             <select class="form-control" id="sel1" name="brand" required>
+               <option value="" selected disabled>Please select brand</option>
+               <option value="Asus">Asus</option>
+               <option value="Apple">Apple</option>
+               <option value="Google">Google</option>
+               <option value="Sony">Sony</option>
+               <option value="Cherry Mobile">Cherry Mobile</option>
+             </select>
+        </div>
+        <div class="form-group">
+            <label for="inputname">Product Price: </label>
+            <input type="text" class="form-control"  placeholder="Product Price ex. &#8369 1,000" name="price" required>
+        </div>
+       <div class="form-group">
+          <label for="comment">Product Description:</label>
+              <textarea class="form-control" rows="5" name="description" required></textarea>
+       </div>
+      <div class="form-group">
+          <label for="inputname">Product Quantity:</label>
+          <input type="text" class="form-control" name="qty" required>
+      </div>
+      <div class="form-group">
+          <label for="inputname">Product Image Link:</label>
+             <input type="text" class="form-control" placeholder="Enter product name/title" name="imageLink" required> 
+       </div>
+
+      <!--
+      <div class="form-group">
+           <label for="exampleInputFile">Product Image: </label>
+           <input type="file" class="form-control-file" aria-describedby="fileHelp" name="img" required>
+           <small id="fileHelp" class="form-text text-muted">Recommended: Choose a nice product image and also use png </small>
+      </div>  
+      -->
+
+
+    <div class="form-group">
+     <div>
+      <button class="btn btn-primary" name="submit" type="submit">
+       Update Product Info WHohoo!
+      </button>
+      <button type="reset" class="btn btn-warning">Clear</button>
+     </div>
+    </div>
+
+   </form>
+</div>
+  
+  
+</body>
+
+</html>
