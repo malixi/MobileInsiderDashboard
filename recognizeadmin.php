@@ -22,20 +22,21 @@ $result= mysqli_query($dbconn, $query);
 $rows=mysqli_fetch_array($result);
 
 if($aemail==$rows['email']&&$apassword==$rows['password']){
-	
 
-	
+
+
 	$_SESSION['fname']=$rows['firstName'];
 	$_SESSION['lname']=$rows['lastName'];
 	$_SESSION['password']=$rows['password'];
 	$_SESSION['email']=$rows['email'];
 
-	echo"<script>location.href='dash.php';</script>";
-	
-	
+echo"<script>location.href='dash.php';</script>";
+
+
 }else{
-	echo"<script>window.alert(' Invalid Account Try Again ');</script>";
-echo"<script>location.href='login.php';</script>";}
+	
+echo"<script>window.alert(' Invalid Account Try Again ');</script>";
+echo"<script>location.href='index.php';</script>";}
 
 
 ?>

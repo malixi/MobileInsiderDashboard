@@ -23,18 +23,18 @@ session_start();
 
   <!--  <script type="text/javascript">
     var a = Math.ceil(Math.random() * 10);
-    var b = Math.ceil(Math.random() * 10);       
+    var b = Math.ceil(Math.random() * 10);
     var c = a + b
     function DrawBotBoot()
     {
         document.write("What is "+ a + " + " + b +"? ");
         document.write("<input id='BotBootInput' type='text' maxlength='2' size='2'/>");
-    }    
+    }
     function ValidBotBoot(){
         var d = document.getElementById('BotBootInput').value;
-        if (d == c) return true;        
+        if (d == c) return true;
         return false;
-        
+
     }
     </script> -->
 
@@ -42,7 +42,7 @@ session_start();
 </head>
 
 <body>
-	
+
 	<div class="row">
 		<div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4">
 			<div class="login-panel panel panel-default">
@@ -51,13 +51,13 @@ session_start();
 				  <form class="form" action="recognizeadmin.php" method="post">
 						<fieldset>
 							<div class="form-group">
-								<input class="form-control" placeholder="E-mail" name="email" type="email">
+								<input class="form-control" placeholder="E-mail" name="email" type="email" required>
 								 <small id="emailHelp" class="form-text text-muted"> Only the register members of Mobile Insider admins can log in whohohoo! </small>
 							</div>
 							<div class="form-group">
-								<input class="form-control" placeholder="Enter your Password" name="pw" type="password">
+								<input class="form-control" placeholder="Enter your Password" name="pw" type="password" required>
 							</div>
-						   
+
 
 						 <!--    <div class="form-group">
                               Are you human?<br />
@@ -77,9 +77,9 @@ session_start();
 				</div>
 			</div>
 		</div><!-- /.col-->
-	</div><!-- /.row -->	
-	
-		
+	</div><!-- /.row -->
+
+
 
 	<script src="js/jquery-1.11.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
@@ -90,9 +90,9 @@ session_start();
 	<script src="js/bootstrap-datepicker.js"></script>
 	<script>
 		!function ($) {
-			$(document).on("click","ul.nav li.parent > a > span.icon", function(){		  
-				$(this).find('em:first').toggleClass("glyphicon-minus");	  
-			}); 
+			$(document).on("click","ul.nav li.parent > a > span.icon", function(){
+				$(this).find('em:first').toggleClass("glyphicon-minus");
+			});
 			$(".sidebar span.icon").find('em:first').addClass("glyphicon-plus");
 		}(window.jQuery);
 
@@ -102,7 +102,7 @@ session_start();
 		$(window).on('resize', function () {
 		  if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
 		})
-	</script>	
+	</script>
 </body>
 
 </html>
