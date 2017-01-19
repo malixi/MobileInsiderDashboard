@@ -11,7 +11,7 @@ $dbconn = @mysqli_connect(DB_HOST,DB_USER, DB_PASSWORD, DB_NAME)
 OR die('could not connect to MariaDB'.mysqli_connect_error());
 
 if(!$_SESSION['fname']){
- header("Location: login.php", 404);
+ header("Location: index.php", 404);
           exit;}
 
 ?>
@@ -63,7 +63,7 @@ if(!$_SESSION['fname']){
 						<ul class="dropdown-menu" role="menu">
 						<!--	<li><a href="#"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> Profile</a></li>
 							<li><a href="#"><svg class="glyph stroked gear"><use xlink:href="#stroked-gear"></use></svg> Settings</a></li>-->
-							<li><a href="index.php"><svg class="glyph stroked cancel"><use xlink:href="#stroked-cancel"></use></svg> Logout</a></li>
+							<li><a href="logout.php"><svg class="glyph stroked cancel"><use xlink:href="#stroked-cancel"></use></svg> Logout</a></li>
 						</ul>
 					</li>
 				</ul>
