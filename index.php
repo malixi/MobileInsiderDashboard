@@ -79,6 +79,9 @@ session_start();
 		</div><!-- /.col-->
 	</div><!-- /.row -->
 
+	<p style="color: #0080ff; text-align:center;">A webcom Project &copy; by TEAM ANO 2O17</p>
+
+
 
 
 	<script src="js/jquery-1.11.1.min.js"></script>
