@@ -87,6 +87,9 @@ OR die('could not connect to MariaDB'.mysqli_connect_error());
             <li><a href="addbrand.php"><svg class="glyph stroked star"><use xlink:href="#stroked-star"/></svg>
             </svg> Add Brand </a></li>
 
+            <li><a href="listbrands.php"><svg class="glyph stroked clipboard with paper"><use xlink:href="#stroked-clipboard-with-paper"/></svg>
+   </svg>
+            </svg> List All The BRANDS </a></li>
           <!--
 			<li><a href="charts.html"><svg class="glyph stroked line-graph"><use xlink:href="#stroked-line-graph"></use></svg> Charts</a></li>
 			<li><a href="tables.html"><svg class="glyph stroked table"><use xlink:href="#stroked-table"></use></svg> Tables</a></li>
