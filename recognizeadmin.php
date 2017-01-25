@@ -1,42 +1,47 @@
 <?php
 
+//putek gumana ka rin naiiyak na ako huhuhu rak na ituh
+
 session_start();
 
-DEFINE ('DB_USER', 'root');
-DEFINE ('DB_PASSWORD', '');
-DEFINE ('DB_HOST', 'localhost');
-DEFINE ('DB_NAME', 'store');
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "store";
 
-$dbconn = @mysqli_connect(DB_HOST,DB_USER, DB_PASSWORD, DB_NAME)
-OR die('could not connect to MariaDB'.mysqli_connect_error());
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
 
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
 
-$aemail=$_POST['email'];
-$apassword=$_POST['pw'];
+// prepare and bind
 
-
-
-
-$query="SELECT * from admins where email = '".$aemail."' AND password = '".$apassword."'";
-$result= mysqli_query($dbconn, $query);
-$rows=mysqli_fetch_array($result);
-
-if($aemail==$rows['email']&&$apassword==$rows['password']){
+   $aemail=$_POST['email'];
+   $apassword=$_POST['pw'];
 
 
+   $stmt = $conn->prepare("SELECT * FROM admins WHERE email=? AND password=? ");
+   $stmt->bind_param('ss', $aemail, $apassword);
+   $stmt->execute();
+	 $result = $stmt->get_result();
 
-	$_SESSION['fname']=$rows['firstName'];
-	$_SESSION['lname']=$rows['lastName'];
-	$_SESSION['password']=$rows['password'];
-	$_SESSION['email']=$rows['email'];
+		if($rows = $result->fetch_assoc()){
+      $_SESSION['fname']=$rows['firstName'];
+    	$_SESSION['lname']=$rows['lastName'];
+    	$_SESSION['password']=$rows['password'];
+    	$_SESSION['email']=$rows['email'];
 
-echo"<script>location.href='dash.php';</script>";
-
-
-}else{
-	
-echo"<script>window.alert(' Invalid Account Try Again ');</script>";
-echo"<script>location.href='index.php';</script>";}
+      echo"<script>location.href='dash.php';</script>";
 
 
-?>
+		}else{
+			echo"<script>window.alert('Email Address/Password Incorrect');</script>";
+			echo"<script>location.href='index.php';</script>";
+		}
+
+    $stmt->close();
+    $conn->close();
+    ?>
